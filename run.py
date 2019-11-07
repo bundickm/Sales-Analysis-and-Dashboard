@@ -9,21 +9,6 @@ from dash.dependencies import Input, Output
 from app import app, server
 from pages import index, segmentation, pareto, sales
 
-"""
-https://dash-bootstrap-components.opensource.faculty.ai/l/components/navbar
-
-NavbarSimple consists of a 'brand' on the left, to which you can attach a link 
-with brand_href, and a number nav items as its children. NavbarSimple will 
-collapse on smaller screens, and add a toggle for revealing navigation items.
-
-brand (string, optional): Brand text, to go top left of the navbar.
-brand_href (string, optional): Link to attach to brand.
-children (a list of or a singular dash component, string or number, optional): The children of this component
-color (string, optional): Sets the color of the NavbarSimple. Main options are primary, light and dark, default light. You can also choose one of the other contextual classes provided by Bootstrap (secondary, success, warning, danger, info, white) or any valid CSS color of your choice (e.g. a hex code, a decimal code or a CSS color name)
-dark (boolean, optional): Applies the `navbar-dark` class to the NavbarSimple, causing text in the children of the Navbar to use light colors for contrast / visibility.
-light (boolean, optional): Applies the `navbar-light` class to the NavbarSimple, causing text in the children of the Navbar to use dark colors for contrast / visibility.
-sticky (string, optional): Stick the navbar to the top or the bottom of the viewport, options: top, bottom. With `sticky`, the navbar remains in the viewport when you scroll. By contrast, with `fixed`, the navbar will remain at the top or bottom of the page.
-"""
 
 navbar = dbc.NavbarSimple(
     brand='Sales and Customer Dashboard',
@@ -56,9 +41,6 @@ footer = dbc.Container(
     )
 )
 
-# For more explanation, see: 
-# Plotly Dash User Guide, URL Routing and Multiple Apps
-# https://dash.plot.ly/urls
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False), 
@@ -67,6 +49,7 @@ app.layout = html.Div([
     html.Hr(),
     footer
 ])
+
 
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
