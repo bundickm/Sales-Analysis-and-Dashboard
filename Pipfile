@@ -1,0 +1,24 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+category-encoders = "*"
+dash = "*"
+dash-bootstrap-components = "*"
+dash-daq = "*"
+eli5 = "*"
+gunicorn = "*"
+jupyter = "*"
+matplotlib = "*"
+pandas = "*"
+plotly = "*"
+seaborn = "*"
+scikit-learn = "*"
+shap = "*"
+
+[requires]
+python_version = "3.7"
